@@ -1,0 +1,32 @@
+<br>
+<p class="anh_test"><%= image_tag("2.jpg", size:"1600x450") %></p>
+<div class="list_post">
+<% Post.all.each do |post| %>
+  <%= link_to post_path(post.id), class: 'text-decoration-none' do %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <table>
+            <td>
+                <% if post.header_image.present? %>
+                    <%= image_tag(post.header_image, width: '400px') %>
+                <% end %>
+                &nbsp;
+            </td>
+
+            <td>
+                <strong><p class="post_title" ><%= post.title %></p></strong>
+                <!-- <h5 class="post_description"><%= post.content %></h5> -->
+                <div class="post_description">
+                    <% if post.content.length > 350 %>
+                        <%= truncate(post.content, length: 350) %>...
+                    <% else %>
+                        <%= post.content %>
+                    <% end %>
+                <div>
+            </td>
+        </table>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+</div>

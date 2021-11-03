@@ -1,0 +1,23 @@
+  <header class="navbar navbar-fixed-top navbar-inverse">
+         <div class="container">
+            <%= link_to "Blog", root_path, id: "logo" %>
+            <nav>
+               <ul class="nav navbar-nav navbar-right">
+                  <% if user_signed_in? %> 
+                  <li class="room_chat_link" ><%= link_to 'Room chat', rooms_path, id: "link_header" %></li> 
+                  <li class="new_post" ><%= link_to 'New Post', new_post_path, id: "link_header" %></li>   
+                  <% if current_user.profile == nil %>
+                     <li class="pprofile"><%= link_to "Create Profile", new_profile_path, id: "link_header" %></li>
+                  <% else %>
+                     <li class="pprofile"><%= link_to 'View Profile', current_user.profile, id: "link_header" %></li> 
+                  <% end %>
+                  <li class="help"><%= link_to "Help","#",id: "link_header" %>
+                     <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class:"signout" %>
+                  <%else%>
+                     <li class="signup"><%= link_to "Sign Up", new_user_registration_path, id: "link_header" %>
+                     <li class="signin"><%= link_to "Sign In", user_session_path, id: "link_header" %>
+                  <% end %>
+               </ul>
+            </nav>
+         </div>
+      </header>

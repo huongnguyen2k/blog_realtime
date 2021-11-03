@@ -1,0 +1,33 @@
+<br>
+<br>
+<br>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @profile.full_name %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @profile.birthday %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @profile.phone %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @profile.address %>
+</p>
+
+<p>
+  <strong>Interests:</strong>
+  <%= @profile.intersts %>
+</p>
+  
+<p class="edit_prf"><%= link_to 'Edit', edit_profile_path(@profile), id: "link_edit" %> </p>
+<!-- |
+<%= link_to 'Back', profiles_path %> -->

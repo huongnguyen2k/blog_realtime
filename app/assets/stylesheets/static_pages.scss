@@ -1,0 +1,170 @@
+
+
+/* universal */
+
+
+
+section {
+	overflow: auto;
+}
+
+textarea {
+	resize: vertzical;
+}
+
+.center {
+	text-align: center;
+    color: rgb(39, 35, 35);
+}
+
+.center h1 {
+	margin-bottom: 10px;
+}
+/* typography */
+
+h1,h2,h3,h4,h5,h6 {
+	line-height: 1;
+}
+
+h1 {
+	font-size: 3em;
+	letter-spacing: -2px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.2em;
+	letter-spacing: -1px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-weight: normal;
+	color: #777;
+}
+a {
+	text-decoration: none;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+}
+/* header */
+
+#logo {
+	float: left;
+	margin-right: 10px;
+	font-size: 1.7em;
+	color: red;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+.search {
+	padding-top: 14px;
+}
+
+.signout {
+	margin-top: 12px;
+}
+
+#logo:hover {
+	color: white;
+	text-decoration: none;
+}
+/* footer */
+
+footer {
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid #222;
+	color: #777;
+}
+
+footer a {
+	color: #555;
+}
+
+footer a:hover {
+	color: #222;
+}
+
+footer small {
+	float: left;
+}
+
+footer ul {
+	float: right;
+	list-style: none;
+}
+
+footer ul li {
+	float: left;
+	margin-left: 15px;
+}
+
+.navbar-inverse {
+	margin: auto;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	position: fixed;
+	z-index: 1000;
+    background-color: #222;
+    border-color: #090909;
+}
+.new_post{
+	text-decoration: none;
+	color: black;
+    position: absolute;
+ 	right: 30%;
+ 	top: 20px;
+}
+.pprofile {
+    color: black;
+    position: absolute;
+ 	right: 22%;
+ 	top: 20px;
+}
+
+.help {
+	text-decoration: none;
+    position: absolute;
+ 	right: 17%;
+ 	top: 20px;
+}
+.search{
+	position: absolute;
+ 	left:20%;
+ 	padding-top: 20px;
+ }
+ .signout {
+    position: absolute;
+ 	right: 8%;
+ 	margin-top: -10px;
+}
+ .signup {
+    position: absolute;
+ 	right: 12%;
+ 	margin-top: -10px;
+}
+
+ .signin {
+    position: absolute;
+ 	right: 18%;
+ 	margin-top: -10px;
+}
+
+#link_header{
+	color: white;
+}
+.list_blog{
+	padding-right: 12%;
+	padding-left: 12%;
+}
+.card{
+	border: none;
+	border-bottom: 2px dashed #000000;
+}
+

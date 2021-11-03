@@ -1,0 +1,33 @@
+<br>
+<br>
+<br>
+<p id="notice"><%= notice %></p>
+<p>
+  <% if @post.header_image.present? %>
+  <%= image_tag(@post.header_image, width: '100%') %>
+  <% end %>
+</p>
+
+<strong class="post_title">
+
+  <%= @post.title %> <%= link_to 'Edit', edit_post_path(@post)%>  
+  <br>
+  <br>
+</strong>
+
+
+
+<p>
+  <%= @post.content %>
+</p>
+
+<br>
+
+<p>
+  <strong>Blogger's email:</strong>
+  <%= @post.user.email %>
+</p>
+
+
+
+

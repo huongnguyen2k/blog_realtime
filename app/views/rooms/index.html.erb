@@ -1,0 +1,62 @@
+<div id="user_id" data_user_id="<%= current_user.id %>"></div>
+<div id="room_id" data_room_id="<%= @room.try(:id) %>"></div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3 rooms-sidebar">
+      <div class="card no-outline">
+        <div class="card-body">
+
+          <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <small>Logged in as</small> <%= current_user.name %>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to "Edit Profile", edit_user_registration_path, class: 'dropdown-item' %>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <%= render 'form', room: Room.new %>
+      <hr>
+      <% @rooms.each do |room| %>
+        <%= link_to room, class: 'room-link' do %>
+          <% active_class = (@room == room) ? 'active' : '' %>
+          <div class="card no-outline mb-2 room-card <%= active_class %>">
+            <div class="card-body">
+              <span class='name'><%= room.name %></span><br>
+              <span class='member-count'>
+                <small><%= room.users.uniq.count %> Members</small>
+              </span>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="col-9">
+      <% if @room.present? %>
+        <div class="chat-room">
+          <nav class="navbar navbar-light">
+            <span class="navbar-brand" href="#">
+              <b><%= @room.name %></b><br>
+              <small><%= @room.users.uniq.count %> Members </small>
+            </span>
+            <%= link_to 'Delete', @room, method: :delete, class:"btn btn-danger", data: { confirm: 'Are you sure?' } %>
+          </nav>
+          <div id="messages">
+            <% @room.messages.each do |message| %>
+              <%= render 'messages/message', message: message %>
+            <% end %>
+          </div>
+          <div class="chat-box">
+            <%= render 'messages/form', message: Message.new, room: @room %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
