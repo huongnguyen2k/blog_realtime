@@ -14,4 +14,4 @@ default: &default
      pool: 5
 development:
      <<: *default
-     database: blog2
+     database: blog3
