@@ -53,7 +53,7 @@ var submit_messages;
 $(document).on('turbolinks:load',function()
 {
   var objDiv = document.getElementById("messages");
-  objDiv.scrollTop = objDiv.scrollHeight;
+  // objDiv.scrollTop = objDiv.scrollHeight;
   submit_messages();
 });
 
