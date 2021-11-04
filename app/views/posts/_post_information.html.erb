@@ -3,7 +3,7 @@
 <div class="list_post">
 <% Post.all.each do |post| %>
   <%= link_to post_path(post.id), class: 'text-decoration-none' do %>
-    <div class="card mb-3">
+    <div class="post_body">
       <div class="card-body">
         <table>
             <td>
