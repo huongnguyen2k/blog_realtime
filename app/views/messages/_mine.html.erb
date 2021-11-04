@@ -4,7 +4,8 @@
       <%= message.content %>
     </div>
     <div class="author">
-      <%= message.user.name %>
+            <%= image_tag(message.user.profile.header_image, width: '30px', id: "avt_img") %>
+
     </div>
   </div>
 </div>

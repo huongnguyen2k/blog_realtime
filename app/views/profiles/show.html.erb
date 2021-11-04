@@ -2,7 +2,13 @@
 <br>
 <br>
 <p id="notice"><%= notice %></p>
-
+<strong>Avatar:</strong>
+<p >
+  <% if @profile.header_image.present? %>
+    <%= image_tag(@profile.header_image, width: '400px', id: "avt_img") %>
+  <% end %>
+  &nbsp;
+</p>
 <p>
   <strong>Full name:</strong>
   <%= @profile.full_name %>

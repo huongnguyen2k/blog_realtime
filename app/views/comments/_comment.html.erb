@@ -1,0 +1,16 @@
+<div class="comment_body"> 
+  <h3 class="text-center title">Comment</h3>
+ <div class="row">
+     <ul>
+         <br>
+         <%= render partial: 'comments/index', locals: { comments: @comments } %>
+     </ul>
+  </div>
+  <div class="post_comment">
+    <% if user_signed_in? %>
+       <div id="comment-create">
+           <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+       </div>
+     <% end %>
+  </div>
+</div>

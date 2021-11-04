@@ -2,8 +2,9 @@ class SendMessageJob < ApplicationJob
   queue_as :default
 
   def perform(message)
-
     mine = ApplicationController.render(
+      host: 'localhost:3000',
+      http_host: 'http://localhost:3000',
       partial: 'messages/mine',
       locals: {message: message}
     )

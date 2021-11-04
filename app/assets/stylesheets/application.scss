@@ -386,3 +386,55 @@ aside {
 .post_body{
   border-bottom: 2px dashed #000000;
 }
+.comment_body{
+  border-radius: 10px;
+  border: 2px inset #000000;
+}
+.cmt_body{
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 90px;
+  border-radius: 10px;
+  border: 2px ;
+  background-color: #f0f2f5;
+}
+#delete-btn{
+  text-color: black;
+  font-size: 10px;
+  height: 22px;
+  border-radius: 10px;
+  border: 2px ;
+  background-color: #f0f2f5;
+}
+#test{
+  display: none;
+}
+.comment-nickname{
+  padding: 0px;
+}
+.comment-entry{
+  max-width: 1020px;
+  word-wrap: break-word;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.user_cmt{
+  margin-bottom: 0rem;
+}
+.input-mysize{
+  padding-left: 15px; 
+  border-radius: 10px;
+  border: 2px ;
+  background-color: #f0f2f5;
+  width: 95%;
+  margin-bottom: 10px;
+}
+#submit_btn{
+  display: none;
+}
+.text-center{
+  font-size: 30px;
+}
+#avt_img{
+  border-radius: 50%;
+}

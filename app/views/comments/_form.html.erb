@@ -1,4 +1,4 @@
 <%= form_with(model: [@post, @comment], url: post_comments_path(@post.id) ) do |f| %>
-    <%= f.text_area :content, class: "input-mysize" %>
-    <%= f.submit "Send", class: "btn btn-outline-dark comment-submit float-right", id:"submit_btn" %>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.text_field :content, placeholder: "Type your comment here...", class: "input-mysize" %>
+    <%= f.submit "Send", class: "btn btn-outline-dark comment-submit", id:"submit_btn" %>
 <% end %>

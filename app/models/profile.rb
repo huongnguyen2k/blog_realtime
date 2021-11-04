@@ -6,4 +6,6 @@ class Profile < ApplicationRecord
 	validates :address, presence: true
 	validates :intersts, presence: true
 	validates :user_id, presence: true
+
+	has_one_attached :header_image
 end
