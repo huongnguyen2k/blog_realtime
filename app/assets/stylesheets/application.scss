@@ -15,12 +15,13 @@ body {
 }
 
 .chat-room {
-  height: 100vh;
+  height: 110vh;
 
   #messages {
+    max-height: 650px;
     height: 100%;
     overflow-y: scroll;
-    padding-bottom: 200px;
+    padding-bottom: 50px;
     padding-top: 20px;
   }
 
@@ -58,7 +59,7 @@ body {
   .chat-box {
     position: absolute;
     bottom: -60px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     padding: 20px;
     width: 100%;
     margin-left: -15px;
@@ -283,19 +284,6 @@ footer ul li {
   border-bottom: 2px dashed #000000;
 }
 
-.profile_full_name {
-  color: #666;
-}
-.edit_prf{
-  color: black;
-}
-.room_chat_link{
-  text-decoration: none;
-  color: black;
-  position: absolute;
-  right: 30%;
-  top: 20px;
-}
 #sign-up-text-1 {
     text-align: center;
 }
@@ -343,120 +331,13 @@ aside {
 .gravatar_edit {
   margin-top: 15px;
 }
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
+
+
+.profile_full_name {
+  color: #666;
 }
-
-body {
-  position: fixed;
-  overflow-y: scroll;
-  top: 0; right: 0; bottom: 0; left: 0;
-  overflow-y: scroll;
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  -ms-overflow-style: none;
-}
-
-.chat-room {
-  height: 100vh;
-
-  #messages {
-    height: 100%;
-    overflow-y: scroll;
-    padding-bottom: 200px;
-    padding-top: 20px;
-  }
-
-  .navbar {
-    border-bottom: 1px solid #eeeeee;
-    margin-left: -15px;
-    width: calc(100% + 30px);
-  }
-
-  .message {
-    min-height: 59px;
-    .content-container {
-      display: inline-block;
-      .content {
-        background-color: #eeeeee;
-        padding: 8px 16px;
-        border-radius: 20px;
-      }
-      .author {
-        font-size: 0.8rem;
-        color: #777777;
-        margin-left: 10px;
-      }
-    }
-    &.me {
-      .content-container {
-        float: right;
-        .content {
-          background-color: #007bff;
-          color: white;
-        }
-      }
-    }
-  }
-  .chat-box {
-    position: absolute;
-    bottom: -60px;
-    margin-bottom: 60px;
-    padding: 20px;
-    width: 100%;
-    margin-left: -15px;
-    background-color: white;
-    border-top: 1px solid #eeeeee;
-    input[type=text] {
-      height: 75px;
-      font-size: 18px;
-      padding: 8px;
-    }
-    .btn {
-      height: 45px;
-    }
-  }
-}
-
-.card.no-outline {
-  border: none;
-}
-
-.room-link {
-  &:hover {
-    text-decoration: none;
-  }
-  .room-card {
-    transition: background-color 0.5s ease;
-    border-radius: 20px;
-    &:hover {
-      background-color: #eeeeee;
-    }
-    &.active {
-      background-color: black;
-      .name {
-        color: white;
-      }
-      .member-count {
-        color: #e0e0e0;
-      }
-    }
-    .name {
-      font-weight: bold;
-      color: black;
-    }
-    .member-count {
-      color: #777777;
-      font-weight: light;
-    }
-  }
-}
-
-.rooms-sidebar {
-  border-right: 1px solid #eeeeee;
+.edit_prf{
+  color: black;
 }
 .blog-card {
   .header-img {
@@ -485,11 +366,23 @@ body {
 }
 
 .anh_test{
-  margin-top: -10%;
+  margin-top: -7%;
   margin-left: -20%;
   opacity: 90%;
 }
 .image-control{
       border: 1px solid #ced4da;
 
+}
+
+.room_chat_link{
+  text-decoration: none;
+  color: black;
+    position: absolute;
+  right: 30%;
+  top: 20px;
+}
+
+.post_body{
+  border-bottom: 2px dashed #000000;
 }
