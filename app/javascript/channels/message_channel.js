@@ -11,9 +11,9 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-    console.log(444);
+   
     const html = `<div id="test-${data.id}">
-    <p><a href="/users/${data.user.id}">@${data.user.nickname}</a></p>
+    <p><a href="/users/${data.user.id}">@${data.user.name}</a></p>
                   <span style="font-weight:bold;">${data.content.content}</span>
                   &nbsp;${data.date}
                   &nbsp;<a id="delete-btn", data-method="delete" href="/posts/${data.post.id}/comments/${data.id}"><button id="${data.id}">Delete</button></a>
@@ -21,10 +21,9 @@ consumer.subscriptions.create("MessageChannel", {
 
     const messages = document.getElementById('collapseExample');
     const newMessage = document.getElementById('comment_content');
-    messages.insertAdjacentHTML('beforeEnd', html);
+    messages.insertAdjacentHTML('beforebegin',html);
     newMessage.value='';
-
-      var countComment = document.getElementsById('collapseExample').innerHTML;
+    const countComment = document.getElementById('collapseExample').lenght;
       console.log(countComment)
   }
 });

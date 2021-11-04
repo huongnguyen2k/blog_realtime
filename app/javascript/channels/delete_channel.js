@@ -10,7 +10,7 @@ consumer.subscriptions.create("DeleteChannel", {
   },
  
   received(data) {
-    console.log(555);
+
     const test = document.getElementById(`${data.id}`)
     const container = document.getElementById(`test-${data.id}`);
     console.log(container)
