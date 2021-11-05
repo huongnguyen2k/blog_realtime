@@ -1,10 +1,16 @@
 <div class="message mb-2">
   <div class="content-container">
-    <div class="content">
+     <% if message.user.profile.header_image.present? %>
+        <span class="author">
+          <%= image_tag(message.user.profile.header_image, size:"30x30", id: "avt_img") %>
+        </span>
+      <% else %>
+        <span class="author">
+          <%= image_tag("avt.jpg", size:"30x30", id: "avt_img") %>
+        </span>
+      <% end %>
+    <span class="content">
       <%= message.content %>
-    </div>
-    <div class="author">
-      <%= message.user.name %>
-    </div>
+    </span>
   </div>
 </div>

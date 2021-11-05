@@ -10,6 +10,15 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-group">
+    <%= form.label :Image %>
+    <%= form.file_field :header_image, class: 'image-control' %>
+    <br>
+    <br>
+    <% if profile.header_image.present? %>
+      <%= image_tag(profile.header_image, size: "400px") %>
+    <% end %>
+  </div>
 
   <div class="field form-group">
     <%= form.label :full_name %>
