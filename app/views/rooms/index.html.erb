@@ -44,7 +44,7 @@
               <b><%= @room.name %></b><br>
               <small><%= @room.users.uniq.count %> Members </small>
             </span>
-            <%= link_to 'Delete', @room, method: :delete, class:"btn btn-danger", data: { confirm: 'Are you sure?' } %>
+             <%= link_to 'Delete', @room, method: :delete, class:"btn btn-danger", data: { confirm: 'Are you sure?' } %> 
           </nav>
           <div id="messages">
             <% @room.messages.each do |message| %>

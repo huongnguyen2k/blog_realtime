@@ -33,7 +33,9 @@
             <div class="comment">
               <div class="cmt_body">
                 <div class="comment-nickname">
-                  <span class="user_cmt" style="font-size: 20px; "><%= link_to "#{comment.user.email}",  comment.user.profile  %> </span> <% if comment.user == current_user %>
+                  <span class="user_cmt" style="font-size: 20px; ">
+                    </span> 
+                      <% if comment.user == current_user %>
                         <%= link_to post_comment_path(comment.post_id, comment.id), method: :delete, remote: true do %>
                           <button id="delete-btn"><%= image_tag("delete.jpg", size:"15x15") %></button>
                         <% end %>

@@ -66,7 +66,8 @@ body {
     background-color: white;
     border-top: 1px solid #eeeeee;
     input[type=text] {
-      height: 75px;
+      border-radius: 15px;
+      height: 45px;
       font-size: 18px;
       padding: 8px;
     }
@@ -371,14 +372,13 @@ aside {
   opacity: 90%;
 }
 .image-control{
-      border: 1px solid #ced4da;
-
+  border: 1px solid #ced4da;
 }
 
 .room_chat_link{
   text-decoration: none;
   color: black;
-    position: absolute;
+  position: absolute;
   right: 30%;
   top: 20px;
 }
@@ -437,4 +437,11 @@ aside {
 }
 #avt_img{
   border-radius: 50%;
+}
+#send{
+  border-radius: 15px;
+}
+.content-container{
+  max-width: 500px;
+  word-wrap: break-word;
 }
