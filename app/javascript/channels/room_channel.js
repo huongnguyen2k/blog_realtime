@@ -41,7 +41,6 @@ $(document).on('turbolinks:load',function() {
       messages.innerHTML =  messages.innerHTML + html;
       var scroll=$('#messages');
       scroll.animate({scrollTop: scroll.prop("scrollHeight")});
-      messages.insertAdjacentHTML('beforeend',html);
 
       // Called when there's incoming data on the websocket for this channel
     }

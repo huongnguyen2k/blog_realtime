@@ -11,10 +11,15 @@
   <%= form.hidden_field :room_id, value: room.id %>
 
   <div class="input-group">
-    <%= form.text_field :content, placeholder: "Type your message here...", class: 'form-control' %>
+    <%= form.text_field :content,required: true, placeholder: "Type your message here...", class: 'form-control' %>
     &nbsp &nbsp
+    <span class="btn btn-large btn-file">
+      <%= image_tag("img.jpg", size:"40x40") %>
+      <%= form.file_field :header_image %>
+    </span>
     <div class="input-group-append">
       <%= form.submit "Send", class: "btn btn-primary",id: "send" %> 
     </div>
   </div>
+  
 <% end %>

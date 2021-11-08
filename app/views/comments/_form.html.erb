@@ -1,4 +1,10 @@
 <%= form_with(model: [@post, @comment], url: post_comments_path(@post.id) ) do |f| %>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.text_field :content, placeholder: "Type your comment here...", class: "input-mysize" %>
     <%= f.submit "Send", class: "btn btn-outline-dark comment-submit", id:"submit_btn" %>
+    <div class="form-group">
+    <%= f.label :Image %>
+    <%= f.file_field :header_image, class: 'image-control' %>
+    <br>
+    <br>
+  </div>
 <% end %>
