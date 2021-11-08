@@ -12,11 +12,10 @@
           <%= image_tag("avt.jpg", size:"30x30", id: "avt_img") %>
         </span>
       <% end %>
-      <p>
-          <% if message.header_image.present? %>
-            <br>
-            <%= image_tag(message.header_image, width: '200px') %>
-          <% end %>
-        </p>
   </div>
+        <% if message.header_image.present? %>
+          <div class="img_ip">
+            <%= image_tag(message.header_image, width:"200px", class: "input_img" ) %>
+          </div>
+        <% end %>
 </div>

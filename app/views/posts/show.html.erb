@@ -25,7 +25,7 @@
 
 <p>
   <strong>Blogger's email:</strong>
-  <%= @post.user.email %>
+  <%= link_to "#{@post.user.email}",  @post.user.profile  %>
 </p>
 
 <%= render "comments/comment" %>

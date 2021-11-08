@@ -1,8 +1,6 @@
-<% if message.header_image.present? %>
   <div class="message mb-2 <%= 'me' if message.user == current_user %>">
-    <div class="chat_abc">
       <div class="content-container">
-      <% if message.user == current_user %>
+        <% if message.user == current_user %>
         <span class="content">
           <%= message.content %>
         </span>
@@ -15,91 +13,31 @@
             <%= image_tag("avt.jpg", size:"30x30", id: "avt_img") %>
           </span>
         <% end %>
-            
-      <% else %>
-         <% if message.user.profile.header_image.present? %>
-          <span class="author">
-            <%= image_tag(message.user.profile.header_image, size:"30x30", id: "avt_img") %>
-          </span>
-        <% else %>
-          <span class="author">
-            <%= image_tag("avt.jpg", size:"30x30", id: "avt_img") %>
-          </span>
-        <% end %>
-        <span class="content">
-          <%= message.content %>
-        </span>
-      <% end %>
-    </div>
-    <br>
-    <br>
-      <% if message.user == current_user %>
+      </div>
+        <% if message.header_image.present? %>
         <div class="img_ip">
-          <% if message.header_image.present? %>
-            <br>
-            <%= image_tag(message.header_image, width:"200px", class: "input_img" ) %>
-            <br>
-          <% end %>
-        </div>
+          <%= image_tag(message.header_image, width:"200px", class: "input_img" ) %>
+        <</div>
+        <% end %>         
       <% else %>
-        <div class="img_ip2">
-          <% if message.header_image.present? %>
-            <%= image_tag(message.header_image, width:"200px", class: "input_img" ) %>
-            <br>
-          <% end %>
-        </div>
-       <% end %>     
-    </div>
-  </div>
-<% else %>
-  <div class="message mb-2 <%= 'me' if message.user == current_user %>">
-      <div class="content-container">
-      <% if message.user == current_user %>
-        <span class="content">
-          <%= message.content %>
-        </span>
-        <% if message.user.profile.header_image.present? %>
+        <div class="content-container">
+          <% if message.user.profile.header_image.present? %>
           <span class="author">
             <%= image_tag(message.user.profile.header_image, size:"30x30", id: "avt_img") %>
           </span>
-        <% else %>
+          <% else %>
           <span class="author">
             <%= image_tag("avt.jpg", size:"30x30", id: "avt_img") %>
           </span>
-        <% end %>
-            
-      <% else %>
-         <% if message.user.profile.header_image.present? %>
-          <span class="author">
-            <%= image_tag(message.user.profile.header_image, size:"30x30", id: "avt_img") %>
-          </span>
-        <% else %>
-          <span class="author">
-            <%= image_tag("avt.jpg", size:"30x30", id: "avt_img") %>
-          </span>
-        <% end %>
-        <span class="content">
-          <%= message.content %>
-        </span>
-      <% end %>
-    </div>
-    <br>
-    <br>
-      <% if message.user == current_user %>
-        <div class="img_ip">
-          <% if message.header_image.present? %>
-            <br>
-            <%= image_tag(message.header_image, width:"200px", class: "input_img" ) %>
-            <br>
           <% end %>
+          <span class="content">
+            <%= message.content %>
+          </span>
         </div>
-      <% else %>
-        <div class="img_ip2">
-          <% if message.header_image.present? %>
-            <%= image_tag(message.header_image, width:"200px", class: "input_img" ) %>
-            <br>
-          <% end %>
-        </div>
-       <% end %>     
+            <% if message.header_image.present? %>
+              <div class="img_ip2">
+                <%= image_tag(message.header_image, width:"200px", class: "input_img" ) %>
+              </div>
+            <% end %>
+      <% end %>  
   </div>
-<% end %>

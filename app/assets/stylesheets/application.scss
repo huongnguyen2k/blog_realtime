@@ -15,13 +15,12 @@ body {
 }
 
 .chat-room {
-  height: 110vh;
+  height: 100vh;
 
   #messages {
-    max-height: 650px;
     height: 100%;
     overflow-y: scroll;
-    padding-bottom: 50px;
+    padding-bottom: 200px;
     padding-top: 20px;
   }
 
@@ -34,6 +33,7 @@ body {
   .message {
     min-height: 59px;
     .content-container {
+      margin-bottom: 20px;
       display: inline-block;
       .content {
         background-color: #eeeeee;
@@ -50,11 +50,6 @@ body {
       .content-container {
         float: right;
         .content {
-          margin-top: 20px;
-          margin-left: 20px;
-          display:inline-block;
-          word-wrap:break-word;
-          max-width: 150px;
           background-color: #007bff;
           color: white;
         }
@@ -64,15 +59,14 @@ body {
   .chat-box {
     position: absolute;
     bottom: -60px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     padding: 20px;
     width: 100%;
     margin-left: -15px;
     background-color: white;
     border-top: 1px solid #eeeeee;
     input[type=text] {
-      border-radius: 15px;
-      height: 45px;
+      height: 75px;
       font-size: 18px;
       padding: 8px;
     }
@@ -396,6 +390,10 @@ aside {
   border: 2px inset #000000;
 }
 .cmt_body{
+  margin-bottom: 50px;
+  margin-top: -28px;
+  margin-left: 60px;
+  display: inline-block;
   padding-left: 15px;
   padding-right: 15px;
   min-height: 90px;
@@ -427,15 +425,15 @@ aside {
   margin-bottom: 0rem;
 }
 .input-mysize{
-  padding-left: 15px; 
+  padding-left: 15px;
+  height: 50px; 
   border-radius: 10px;
   border: 2px ;
   background-color: #f0f2f5;
-  width: 95%;
+  width: 83%;
   margin-bottom: 10px;
 }
 #submit_btn{
-  display: none;
 }
 .text-center{
   font-size: 30px;
@@ -446,8 +444,7 @@ aside {
 #send{
   border-radius: 15px;
 }
-.content-container{
-}
+
 .btn-file {
     position: relative;
     overflow: hidden;
@@ -468,16 +465,17 @@ aside {
     cursor: inherit;
     display: block;
 }
+
+.avt_cmt{
+  display: inline-block;
+}
+
+
 .img_ip{
-  float: right;
-  display:inline-block;
-  margin-right: -9%;
+  margin-left: 70%;
+  margin-top: 10px;
 }
+
 .img_ip2{
-  float: left;
-  display:inline-block;
-  margin-left: 6%;
-}
-.chat_abc{
-  margin-top: 210px;
+  margin-left: 45px;
 }
