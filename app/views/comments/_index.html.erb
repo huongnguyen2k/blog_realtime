@@ -1,13 +1,11 @@
     <% @comments.each do |comment| %>
       <% unless comment.id.nil? %>
         <div class="comment-container" id="test-<%=comment.id%>">
-          <p >
-              <%= image_tag(comment.user.profile.header_image, width: '30px', id: "avt_img") %>
-          </p>
           <div class="comment-box">
             <div class="comment">
               <div class="cmt_body">
                 <div class="comment-nickname">
+                  <span ><%= image_tag(comment.user.profile.header_image, size:"30x30", id: "avt_img") %></span>
                   <span class="user_cmt" style="font-size: 20px; "><%= link_to "#{comment.user.email}",  comment.user.profile  %> </span> <% if comment.user == current_user %>
                         <%= link_to post_comment_path(comment.post_id, comment.id), method: :delete, remote: true do %>
                           <button id="delete-btn"><%= image_tag("delete.jpg", size:"15x15") %></button>
@@ -17,11 +15,16 @@
                 </div>
                 <div class="comment-entry">
                   <span ><%= comment.content %></span>
+                  <p>
+                    <% if comment.header_image.present? %>
+                      <%= image_tag(comment.header_image, width: '200px') %>
+                    <% end %>
+                  </p>
                 </div>
               </div>
               <br>
               </div>
-           </div>
+           </span>
         </div>
       <% end %>
     <% end %>

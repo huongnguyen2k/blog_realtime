@@ -5,7 +5,11 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      ActionCable.server.broadcast 'message_channel', content: @comment, user: @comment.user, date: @comment.created_at.to_s(:datetime_jp), id: @comment.id,post: @comment.post
+      ActionCable.server.broadcast 'message_channel', 
+      content: @comment, user: @comment.user, 
+      date: @comment.created_at.to_s(:datetime_jp), 
+      id: @comment.id,post: @comment.post, 
+      image_url: url_for(@comment.user.profile.header_image)
     end
   end
 
@@ -19,6 +23,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:content, :post_id, :user_id).merge(user_id: current_user.id)
+    params.require(:comment).permit(:content, :post_id, :user_id, :header_image).merge(user_id: current_user.id)
   end
 end

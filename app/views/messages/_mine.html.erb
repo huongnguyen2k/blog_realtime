@@ -12,5 +12,11 @@
           <%= image_tag("avt.jpg", size:"30x30", id: "avt_img") %>
         </span>
       <% end %>
+      <p>
+          <% if message.header_image.present? %>
+            <br>
+            <%= image_tag(message.header_image, width: '200px') %>
+          <% end %>
+        </p>
   </div>
 </div>

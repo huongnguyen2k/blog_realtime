@@ -11,8 +11,8 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-   
     const html = `<div id="test-${data.id}" style="padding-left: 15px; padding-right: 15px; min-height: 90px; border-radius: 10px; border: 2px ; background-color: #f0f2f5;">
+                    <span <img src="${data.image_url}"> </span>
                     <span style="font-size: 20px; margin-bottom: 0rem;"><a href="/users/${data.user.id}">${data.user.email}</a></span>
                     <a id="delete-btn", data-method="delete" href="/posts/${data.post.id}/comments/${data.id}"><button id="${data.id}"style="text-color: black; font-size: 10px; height: 22px; border-radius: 10px; border: 2px ; background-color: #f0f2f5;">(Delete)</button></a>
                     <p style="font-size: 10px;margin-bottom: 5px;">(${data.date})</p>
