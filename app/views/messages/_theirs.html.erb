@@ -12,11 +12,10 @@
     <span class="content">
       <%= message.content %>
     </span>
-    <p>
-          <% if message.header_image.present? %>
-            <br>
-            <%= image_tag(message.header_image, width: '200px') %>
-          <% end %>
-        </p>
   </div>
+    <% if message.header_image.present? %>
+      <div class="img_ip2">
+        <%= image_tag(message.header_image, width:"200px", class: "input_img" ) %>
+      </div>
+    <% end %>
 </div>
