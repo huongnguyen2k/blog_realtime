@@ -9,6 +9,9 @@ class PostsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     @post = Post.find(params[:id])
+    if current_user.id == 1
+      @post.notifications.update_all checked: true
+    end
     @comment = Comment.new
     @comments = @post.comments
     # @post = current_user.posts.find(params[:id])

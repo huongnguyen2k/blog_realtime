@@ -1,0 +1,27 @@
+<span class="tb_list_<%= current_user.id%>">
+  <% Notification.all.each do |notification| %>
+  	<% if notification.checked == false %>
+  		<% if current_user.id == notification.user_id %>
+		  	<p class="tb_list" style="border: 1px dashed #000000; border-radius: 10px; padding: 0.4rem 0.8rem;">
+			  	<% Post.all.each do |post| %>
+			  		<% if post.id == notification.notificationable_id %>
+				  		<%= link_to post_path(post.id), class: 'text-decoration-none' do %>
+				  			<% User.all.each do |user| %>
+					  			<% if user.id == notification.notified_by_id %>
+					  				<%= user.email %>
+					  			<% end %>
+					  		<% end %>
+				  			<%= notification.notice_type %> on 
+				  			<% if post.title.length > 20 %>
+                    "<%= truncate(post.title, length: 20) %>"
+                <% else %>
+                    "<%= post.title %>"
+                <% end %>
+				  		<% end %>	
+				  	<% end %>
+					<% end %>
+				</p>
+			<% end %>
+		<% end %>
+  <% end %>
+</span>
