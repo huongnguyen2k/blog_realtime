@@ -62,7 +62,6 @@ consumer.subscriptions.create("MessageChannel", {
                     <p style="max-width: 1020px; word-wrap: break-word; font-size: 20px; margin-bottom: 5px;">${data.content.content}</p>
                     </div></div><br>`;
     const html2 = `<span>${data.num_not_check}</span>`;
-
     const html3 = `
                       <p style="border: 1px dashed #000000; border-radius: 10px; padding: 0.4rem 0.8rem;">
                         <a href="/posts/${data.post.id}">
@@ -76,10 +75,31 @@ consumer.subscriptions.create("MessageChannel", {
     // const countComment = document.getElementById('collapseExample').lenght;
     // console.log(messages)
 
+    if (Notification.permission === "granted") {
+        var notification = new Notification("You received a new comment!", {
+          icon: "https://banner2.cleanpng.com/20180806/oqx/kisspng-naver-blog-logo-computer-icons-%EC%86%8C%EC%85%9C%EB%9F%AC%EB%8B%9D-%EB%8B%AC%EB%8B%A4-%EC%BD%98-5b686791b44591.7849416415335689137384.jpg",
+          body: `${data.user.email} ${data.notification.notice_type} on "${data.post.title}"`,
+        });
+
+        notification.onclick = function () {
+          window.open(`/posts/${data.post.id}`);
+        };
+
+        setTimeout(function(){
+          notification.close();
+        },5000);
+      } else {
+        Notification.requestPermission();
+      }
+
     $('.comment_body ul').append(html)
     $(`.count-${data.post.user_id}`).html(html2)
     $(`.tb_list_${data.post.user_id}`).append(html3)
     $('#comment_content').val(null)
+
+
   }
 });
 })
+
+
