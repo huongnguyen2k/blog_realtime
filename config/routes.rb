@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :posts do 
     resources :comments, only: [:create, :destroy]
+    resources :notifications
   end
   resources :profiles
   devise_for :users
@@ -9,5 +10,8 @@ Rails.application.routes.draw do
 
   resources :rooms
   resources :messages
+
+
+
 
 end

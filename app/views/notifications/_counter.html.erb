@@ -1,0 +1,16 @@
+<li class="dropdown">
+  <%= link_to "#!", class: "dropdown-toggl", id: "noti-count", data: {toggle: "dropdown"},
+    aria: {haspopup: "true", expanded: "false"} do %>
+    <%= image_tag("notifi_cmt.jpg", size:"30x30") %>
+    <span class="fa fa-globe"></span>
+    <span class="badge badge-danger count-<%=current_user.id%>" data-noti-count="<%= user_signed_in? ? current_user.notifications.num_not_check : 0 %>">
+      <%= user_signed_in? ? current_user.notifications.num_not_check : 0 %>
+    </span>
+    <span class="caret"></span>
+  <% end %>
+  <% if user_signed_in? %>
+    <ul class="dropdown-menu dropdown-notification scrollable-menu list_noti" id="user-notifications">
+      <%= render "notifications/notification" %>
+    </ul>
+  <% end %>
+</li>

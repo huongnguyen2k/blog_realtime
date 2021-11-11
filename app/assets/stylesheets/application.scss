@@ -257,8 +257,8 @@ footer ul li {
  }
  .signout {
     position: absolute;
-  right: 8%;
-  margin-top: -10px;
+    right: 8%;
+    margin-top: -10px;
 }
  .signup {
     position: absolute;
@@ -478,4 +478,23 @@ aside {
 
 .img_ip2{
   margin-left: 45px;
+}
+
+.not-read {
+  background-color: #E9EBEE;
+}
+.not-read a:hover, .not-read a:focus, .not-read a:active {
+  background-color: #F6F7F9;
+}
+
+.list_noti{
+  min-width: 20rem !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 10px !important;
+}
+body{
+  background-color: #fcfcfc !important;
+}
+.dropdown-menu.show{
+  margin-left: 60%;
 }
