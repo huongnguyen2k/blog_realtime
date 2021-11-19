@@ -5,7 +5,13 @@ Rails.application.routes.draw do
     resources :notifications
   end
   resources :profiles
-  devise_for :users
+  # devise_for :users
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
   root "static_pages#home"
 
   resources :rooms
