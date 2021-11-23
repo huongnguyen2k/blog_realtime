@@ -28,7 +28,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     response = https.request(request)
     puts response.read_body
-
+    super
   end
 
   # GET /resource/edit
